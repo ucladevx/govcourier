@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+  govcourier:
+    image: govcourier:latest
+    volumes:
+      - ./config:/config
+      - ./public:/public
+      - ./templates:/templates

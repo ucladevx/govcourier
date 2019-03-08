@@ -1,0 +1,54 @@
+appname: lahacks
+version: v0.1.0
+mode: INFO
+port: 8080
+baseurl: /api
+publicdir: public
+templatedir: templates
+allow_origins:
+  - http://localhost
+postgres:
+  user: postgres
+  password: admin
+  dbname: lahacks
+  host: postgres
+  port: 5432
+  sslmode: disable
+redis:
+  password: admin
+  dbname: 0
+  host: redis
+  port: 6379
+minio:
+  key_id: admin
+  key_secret: adminsecret
+  host: minio
+  port: 9000
+  sslmode: false
+nats:
+  host: messenger
+  port: 4222
+  cluster: nss
+userauth:
+  issuer: lahacks
+  secret: secret
+  duration: 15m
+  refresh_duration: 168h
+user:
+  confirm_duration: 1h
+  password_reset_duration: 1h
+  new_login_email: false
+  password_min_size: 8
+mail:
+  host: mail
+  port: 1025
+  # port: 587
+  from_address: test@lahacks.com
+  insecure: true
+  buffer_size: 1024
+  worker_size: 2
+  conn_msg_cap: 100
+userapp:
+  grader_count: 2
+  max_team_size: 5
+  min_team_size: 2
