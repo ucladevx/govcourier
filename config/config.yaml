@@ -1,4 +1,4 @@
-appname: lahacks
+appname: govcourier
 version: v0.1.0
 mode: INFO
 port: 8080
@@ -6,11 +6,14 @@ baseurl: /api
 publicdir: public
 templatedir: templates
 allow_origins:
-  - http://localhost
+  - http://localhost:3000
+  - http://localhost:3001
+  - http://localhost:3030
+  - http://localhost:3031
 postgres:
   user: postgres
   password: admin
-  dbname: lahacks
+  dbname: govcourier
   host: postgres
   port: 5432
   sslmode: disable
@@ -30,7 +33,7 @@ nats:
   port: 4222
   cluster: nss
 userauth:
-  issuer: lahacks
+  issuer: govcourier
   secret: secret
   duration: 15m
   refresh_duration: 168h
@@ -43,12 +46,8 @@ mail:
   host: mail
   port: 1025
   # port: 587
-  from_address: test@lahacks.com
+  from_address: test@govcourier.com
   insecure: true
   buffer_size: 1024
   worker_size: 2
   conn_msg_cap: 100
-userapp:
-  grader_count: 2
-  max_team_size: 5
-  min_team_size: 2
